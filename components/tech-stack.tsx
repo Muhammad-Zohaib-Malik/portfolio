@@ -1,5 +1,6 @@
 'use client'
 
+import { Card, CardContent } from "@/components/ui/card"
 import {
   SiTypescript,
   SiNodedotjs,
@@ -28,17 +29,20 @@ const technologies = [
 
 export default function TechStack() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-4 sm:grid-cols-4 sm:grid-rows-4 lg:grid-cols-3 gap-4 p-4">
       {technologies.map((tech, index) => (
-        <div
+        <Card
           key={index}
-          className="group relative flex items-center justify-center p-4 rounded-xl bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
+          className="group flex flex-col items-center justify-center p-4 sm:p-2 lg:p-6 border border-zinc-800/50 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 lg:w-44"
         >
-          <tech.icon 
-            className="h-10 w-10 transition-transform duration-300 group-hover:scale-110" 
-            style={{ color: tech.color }} 
-          />
-        </div>
+          <CardContent className="flex flex-col sm:flex-row items-center justify-center gap-3 p-3 sm:p-2 lg:p-2">
+            <tech.icon 
+              className="h-10 w-10 sm:h-10 sm:w-10 lg:h-12 lg:w-12 transition-transform duration-300 group-hover:scale-110" 
+              style={{ color: tech.color }} 
+            />
+            <span className="text-sm sm:text-xs lg:text-base font-medium text-white">{tech.name}</span>
+          </CardContent>
+        </Card>
       ))}
     </div>
   )

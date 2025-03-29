@@ -22,7 +22,7 @@ export default function Home() {
   if (!mounted) return null
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white ">
       <ScrollProgressDemo />
       {/* <SpinningText>learn more • earn more • grow more •</SpinningText> */}
       <DockDemo />
@@ -93,7 +93,8 @@ export default function Home() {
 
 
             {/* Tech Stack */}
-            <div>
+
+            <div className="">
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Tech Stack</h3>
               <TechStack />
             </div>
