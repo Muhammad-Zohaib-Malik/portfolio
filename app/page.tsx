@@ -7,6 +7,7 @@ import TechStack from "@/components/tech-stack"
 import { DockDemo} from "@/components/Dock"
 
 import { Button } from "@/components/ui/button"
+import { ScrollProgressDemo } from "@/components/ScrollProgress"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -19,6 +20,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <ScrollProgressDemo/>
       <DockDemo/>
 
       <main className="container mx-auto px-4 py-4 sm:py-10">
