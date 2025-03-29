@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { ScrollProgressDemo } from "@/components/ScrollProgress"
 import { SpinningText } from "@/components/magicui/spinning-text"
 import { SparklesText } from "@/components/magicui/sparkles-text"
+import { ProjectsCard } from "@/components/ProjectsCard"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -96,24 +97,15 @@ export default function Home() {
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Tech Stack</h3>
               <TechStack />
             </div>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              {/* <Button className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white">Let&apos;s Talk</Button> */}
-
-              {/* <Button variant="outline" className="w-full sm:w-auto border-zinc-700 text-white">
-                My Work <ArrowRight className="ml-2 h-4 w-4" />
-              </Button> */}
-
-
+            <div>
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Projects</h3>
+              <ProjectsCard />
             </div>
-
           </div>
         </div>
-        
       </main>
-       
-     
+
+
     </div>
   )
 }
