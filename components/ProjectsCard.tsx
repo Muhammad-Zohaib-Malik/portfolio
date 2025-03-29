@@ -19,7 +19,7 @@ interface Project {
   features: string[];
 }
 
-const projects = [
+const projects: Project[] = [
   {
     title: "AI Mock Interview",
     description: "An AI-powered platform for conducting mock interviews and providing feedback.",
@@ -53,7 +53,8 @@ const projects = [
 ];
 
 export const ProjectsCard = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  // Explicitly define the type as Project | null
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
@@ -67,7 +68,7 @@ export const ProjectsCard = () => {
             <p className="text-sm text-gray-400">Click below to view the source code.</p>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button  className="border bottom-3" variant="ghost" onClick={() => setSelectedProject(project)}>
+            <Button className="border bottom-3" variant="ghost" onClick={() => setSelectedProject(project)}>
               Features
             </Button>
             <Button asChild variant="ghost">
@@ -84,17 +85,17 @@ export const ProjectsCard = () => {
       {/* Feature Popup Dialog */}
       {selectedProject && (
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent>
+          <DialogContent className="bg-black text-white border border-gray-700">
             <DialogHeader>
-              <DialogTitle>Features of {selectedProject.title}</DialogTitle>
+              <DialogTitle className="text-white">Features of {selectedProject.title}</DialogTitle>
             </DialogHeader>
-            <ul className="list-disc pl-5 space-y-2">
-              {selectedProject.features.map((feature:any, index:any):any => (
-                <li key={index} className="text-gray-600">{feature}</li>
+            <ul className="list-disc pl-5 space-y-2 text-white">
+              {selectedProject.features.map((feature, index) => (
+                <li key={index} className="text-white">{feature}</li>
               ))}
             </ul>
             <div className="flex justify-end">
-              <Button variant="outline" onClick={() => setSelectedProject(null)}>Close</Button>
+              <Button variant="ghost" className="border border-2" onClick={() => setSelectedProject(null)}>Close</Button>
             </div>
           </DialogContent>
         </Dialog>
