@@ -1,7 +1,6 @@
 "use client";
 
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
-import Link from "next/link";
 import React from "react";
 
 import { buttonVariants } from "@/components/ui/button";
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
+import Link from "next/link";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -63,14 +63,13 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "#", icon: HomeIcon, label: "Home" }
   ],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/Muhammad-Zohaib-Malik", // External URL
+        url: "https://github.com/Muhammad-Zohaib-Malik", 
         icon: Icons.github,
       },
       LinkedIn: {
