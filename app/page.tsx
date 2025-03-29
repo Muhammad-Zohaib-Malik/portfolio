@@ -38,8 +38,8 @@ export default function Home() {
           <Card className="relative overflow-hidden md:sticky md:top-24 bg-zinc-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col items-center text-center h-fit w-full max-w-[400px] mx-auto md:mx-0">
             <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
             <CardContent className="flex flex-col items-center">
-              <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden mb-4 sm:mb-6 bg-purple-900/30">
-                <img src="/placeholder.svg?height=160&width=160" alt="Profile" className="w-full h-full object-cover" />
+              <div className="w-[200px] h-[200px] sm:w-40 sm:h-440 rounded-2xl overflow-hidden mb-4 sm:mb-6 ">
+                <img src="/profile.jpg" alt="Profile" className="w-full h-full object-cover" />
               </div>  
               <span className="text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text animate-gradient text-2xl sm:text-3xl font-bold mb-1">
                 Muhammad Zohaib
