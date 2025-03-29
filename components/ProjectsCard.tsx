@@ -57,9 +57,9 @@ export const ProjectsCard = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-2 gap-6 p-5">
       {projects.map((project, index) => (
-        <Card key={index} className="relative w-full overflow-hidden">
+        <Card key={index} className="relative w-full overflow-hidden bg-[#121314]">
           <CardHeader>
             <CardTitle>{project.title}</CardTitle>
             <CardDescription>{project.description}</CardDescription>
