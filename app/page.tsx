@@ -4,10 +4,12 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Mail, Globe, Github, Linkedin, Twitter } from "lucide-react"
 import TechStack from "@/components/tech-stack"
-import { DockDemo} from "@/components/Dock"
+import { DockDemo } from "@/components/Dock"
 
 import { Button } from "@/components/ui/button"
 import { ScrollProgressDemo } from "@/components/ScrollProgress"
+import { SpinningText } from "@/components/magicui/spinning-text"
+import { SparklesText } from "@/components/magicui/sparkles-text"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -20,10 +22,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <ScrollProgressDemo/>
-      <DockDemo/>
-
-      <main className="container mx-auto px-4 py-4 sm:py-10">
+      <ScrollProgressDemo />
+      {/* <SpinningText>learn more • earn more • grow more •</SpinningText> */}
+      <DockDemo />
+      <main className="container mx-auto  px-4 py-4 sm:py-14">
         <div className="grid grid-cols-1 md:grid-cols-[500px_1fr] gap-4 sm:gap-8 items-start">
           {/* Profile Card */}
           <div className="md:sticky md:top-36 bg-zinc-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col items-center text-center h-fit max-w-[400px] mx-auto w-full">
@@ -65,12 +67,15 @@ export default function Home() {
           <div className="space-y-10 sm:space-y-12">
             <div>
               <motion.h1
-                className="text-3xl sm:text-4xl md:text-7xl font-bold leading-tight"
+                className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Transforming Your Ideas into <span className="text-purple-500">Reality</span>
+                <SparklesText className="inline-flex" text=" Transforming Your Ideas into " />
+                <span className="text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text animate-gradient">
+                  Reality
+                </span>
               </motion.h1>
 
               <motion.p
@@ -84,7 +89,7 @@ export default function Home() {
               </motion.p>
             </div>
 
-            
+
 
             {/* Tech Stack */}
             <div>
@@ -99,11 +104,16 @@ export default function Home() {
               {/* <Button variant="outline" className="w-full sm:w-auto border-zinc-700 text-white">
                 My Work <ArrowRight className="ml-2 h-4 w-4" />
               </Button> */}
+
+
             </div>
 
           </div>
         </div>
+        
       </main>
+       
+     
     </div>
   )
 }
