@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Mail, Globe, Github, Linkedin, Twitter } from "lucide-react"
 import TechStack from "@/components/tech-stack"
+import { DockDemo} from "@/components/Dock"
+
 import { Button } from "@/components/ui/button"
 
 export default function Home() {
@@ -17,63 +19,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Navigation */}
-      <div className="sticky top-0 z-50 pt-4 sm:pt-8 pb-2 sm:pb-4 bg-gradient-to-b from-black to-transparent">
-        <nav className="mx-auto w-fit">
-          <div className="flex gap-1 sm:gap-2 p-2 sm:p-3 rounded-2xl bg-zinc-900/80 backdrop-blur-md border border-zinc-800 shadow-2xl">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full hover:bg-purple-600/20 transition-all duration-300 hover:scale-110"
-              asChild
-            >
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5 sm:h-6 sm:w-6" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full hover:bg-purple-600/20 transition-all duration-300 hover:scale-110"
-              asChild
-            >
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-5 w-5 sm:h-6 sm:w-6" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full hover:bg-purple-600/20 transition-all duration-300 hover:scale-110"
-              asChild
-            >
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5 sm:h-6 sm:w-6" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full hover:bg-purple-600/20 transition-all duration-300 hover:scale-110"
-              asChild
-            >
-              <a href="mailto:your.email@example.com">
-                <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full hover:bg-purple-600/20 transition-all duration-300 hover:scale-110"
-              asChild
-            >
-              <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">
-                <Globe className="h-5 w-5 sm:h-6 sm:w-6" />
-              </a>
-            </Button>
-          </div>
-        </nav>
-      </div>
+      <DockDemo/>
 
       <main className="container mx-auto px-4 py-4 sm:py-10">
         <div className="grid grid-cols-1 md:grid-cols-[500px_1fr] gap-4 sm:gap-8 items-start">
