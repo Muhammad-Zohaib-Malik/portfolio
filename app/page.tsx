@@ -98,7 +98,10 @@ export default function Home() {
 
 
 
-
+  {/* Footer */}
+  <footer className="text-center text-zinc-500 text-sm mt-10">
+    © {new Date().getFullYear()} Zohaib. All rights reserved.
+  </footer>
 
           </div>
         </div>
