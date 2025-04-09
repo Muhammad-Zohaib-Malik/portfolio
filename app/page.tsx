@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 
 import TechStack from "@/components/tech-stack"
 import { DockDemo } from "@/components/Dock"
-
 import { Button } from "@/components/ui/button"
 import { ScrollProgressDemo } from "@/components/ScrollProgress"
 import { SpinningText } from "@/components/magicui/spinning-text"
@@ -24,60 +23,70 @@ export default function Home() {
   if (!mounted) return null
 
   return (
-    <div className="min-h-screen bg-[#121314] text-white">
+    <div className="min-h-screen bg-[#121314] text-white relative ">
       <ScrollProgressDemo />
-      <div className="absolute top-20 left-16">
+
+      {/* Spinning Text */}
+      <div className="absolute top-20 left-16 z-10">
         <SpinningText>Backend beast • Always up • Never down</SpinningText>
       </div>
 
       <DockDemo />
 
-      <main className="container mx-auto px-10 py-8 sm:py-14">
-        <div className="flex flex-col md:flex-row md:items-start md:gap-8">
+      {/* Main Section */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-20">
+        <div className="flex flex-col md:flex-row gap-10">
+          
           {/* Profile Card */}
-          <Card className="relative overflow-hidden md:sticky md:top-24 bg-zinc-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col items-center text-center h-fit w-full max-w-[400px] mx-auto md:mx-0">
+          <Card className="relative overflow-hidden bg-zinc-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 w-full max-w-md mx-auto md:mx-0 md:sticky md:top-24 h-fit">
             <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
-            <CardContent className="flex flex-col items-center">
-              <div className="w-[200px] h-[200px] sm:w-40 sm:h-440 rounded-2xl overflow-hidden mb-4 sm:mb-6 ">
+            <CardContent className="flex flex-col items-center text-center">
+              <div className="w-40 h-40 rounded-2xl overflow-hidden mb-6">
                 <img src="/profile.jpg" alt="Profile" className="w-full h-full object-cover" />
-              </div>  
-              <span className="text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text animate-gradient text-2xl sm:text-3xl font-bold mb-1">
+              </div>
+              <span className="text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text animate-gradient text-3xl font-bold mb-1">
                 Muhammad Zohaib
               </span>
               <p className="text-transparent bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text">
                 Backend Developer
               </p>
-              <p className="text-transparent bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text mb-4 sm:mb-6">
+              <p className="text-transparent bg-gradient-to-r from-gray-400 via-gray-300 to-gray-500 bg-clip-text mb-6">
                 Pakistan
               </p>
             </CardContent>
             <CardFooter className="w-full flex items-center justify-center">
-             <a href="MyCV.pdf" download>
-  <ShimmerButton className="shadow-2xl">
-    <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-      Download CV
-    </span>
-  </ShimmerButton>
-</a>
+              <a href="/MyCV.pdf" download>
+                <ShimmerButton className="shadow-2xl">
+                  <span className="text-sm font-medium tracking-tight text-white lg:text-lg">
+                    Download CV
+                  </span>
+                </ShimmerButton>
+              </a>
             </CardFooter>
           </Card>
 
-          {/* Content */}
-          <div className="flex-1 mt-8 md:mt-0 space-y-10 sm:space-y-12">
+          {/* Main Content */}
+          <div className="flex-1 space-y-12">
+            {/* Heading */}
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <SparklesText className="inline-flex" text="Architecting Backend " />
-              <span className="text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text animate-gradient text-2xl sm:text-5xl font-bold mb-1">
-                Brilliance
-              </span>
-            </motion.h1>
+  className="text-2xl sm:text-4xl md:text-6xl font-bold leading-snug sm:leading-tight flex flex-wrap items-center"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+  <SparklesText
+    className="inline-flex text-3xl sm:text-3xl md:text-5xl"
+    text="Architecting Backend"
+  />
+  <span className="text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text animate-gradient ml-2 text-xl sm:text-3xl md:text-5xl font-bold mt-2 sm:mt-0">
+    Brilliance
+  </span>
+</motion.h1>
 
+
+            {/* Description */}
             <motion.p
-              className="text-zinc-400 mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base"
+              className="text-zinc-400 max-w-2xl text-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -87,24 +96,21 @@ export default function Home() {
             </motion.p>
 
             {/* Tech Stack */}
-            <div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Tech Stack</h3>
+            <section>
+              <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
               <TechStack />
-            </div>
+            </section>
 
             {/* Projects */}
-            <div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Projects</h3>
+            <section>
+              <h3 className="text-xl font-semibold mb-4">Projects</h3>
               <ProjectsCard />
-            </div>
+            </section>
 
-
-
-  {/* Footer */}
-  <footer className="text-center text-zinc-500 text-sm mt-10">
-    © {new Date().getFullYear()} Zohaib. All rights reserved.
-  </footer>
-
+            {/* Footer */}
+            <footer className="text-center text-zinc-500 text-sm mt-10">
+              © {new Date().getFullYear()} Zohaib. All rights reserved.
+            </footer>
           </div>
         </div>
       </main>
