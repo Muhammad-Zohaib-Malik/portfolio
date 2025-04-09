@@ -8,10 +8,9 @@ import {
   SiMongodb,
   SiDocker,
   SiAmazon,
-  SiGit,
   SiExpress,
   SiMongoose,
-  SiLinux,
+  SiRedis
 } from "react-icons/si"
 
 const technologies = [
@@ -21,10 +20,10 @@ const technologies = [
   { name: "Express.js", icon: SiExpress, color: "#ffffff" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   { name: "Mongoose", icon: SiMongoose, color: "#880000" },
+  { name: "Redis", icon: SiRedis, color: "#DC382D" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "AWS", icon: SiAmazon, color: "#FF9900" },
-  { name: "Git", icon: SiGit, color: "#F05032" },
-  { name: "Linux", icon: SiLinux, color: "#FCC624" },
+
 ]
 
 export default function TechStack() {
