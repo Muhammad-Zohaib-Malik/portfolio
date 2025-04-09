@@ -23,7 +23,6 @@ import {
   SiMongodb,
   SiJsonwebtokens,
   SiZod,
-  SiDocker,
 } from "react-icons/si";
 
 interface Project {
@@ -123,45 +122,46 @@ export const ProjectsCard = () => {
       {/* Shared Dialog for Features / Tech Stack */}
       {selectedProject && dialogType && (
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="bg-black text-white border border-gray-700">
-            <DialogHeader>
-              <DialogTitle className="text-white">
-                {dialogType === "features"
-                  ? `Features of ${selectedProject.title}`
-                  : `Tech Stack of ${selectedProject.title}`}
-              </DialogTitle>
-            </DialogHeader>
+         <DialogContent className="bg-black text-white border border-gray-700 w-[90vw] sm:max-w-2xl mx-auto px-4 py-6">
+  <DialogHeader>
+    <DialogTitle className="text-white text-lg sm:text-xl">
+      {dialogType === "features"
+        ? `Features of ${selectedProject.title}`
+        : `Tech Stack of ${selectedProject.title}`}
+    </DialogTitle>
+  </DialogHeader>
 
-            {dialogType === "features" ? (
-              <ul className="list-disc pl-5 space-y-2 text-white">
-                {selectedProject.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-            ) : (
-              <div className="flex flex-wrap gap-3 pt-2">
-                {selectedProject.techStack.map((tech, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 px-3 py-1 bg-[#1f1f1f] rounded-md"
-                  >
-                    {tech.icon}
-                    <span className="text-sm">{tech.name}</span>
-                  </div>
-                ))}
-              </div>
-            )}
+  {dialogType === "features" ? (
+    <ul className="list-disc pl-5 space-y-2 text-white text-sm sm:text-base">
+      {selectedProject.features.map((feature, index) => (
+        <li key={index}>{feature}</li>
+      ))}
+    </ul>
+  ) : (
+    <div className="flex flex-wrap gap-3 pt-2">
+      {selectedProject.techStack.map((tech, index) => (
+        <div
+          key={index}
+          className="flex items-center gap-2 px-3 py-1 bg-[#1f1f1f] rounded-md"
+        >
+          {tech.icon}
+          <span className="text-sm">{tech.name}</span>
+        </div>
+      ))}
+    </div>
+  )}
 
-            <div className="flex justify-end mt-4">
-              <Button
-                variant="ghost"
-                className="border"
-                onClick={() => setSelectedProject(null)}
-              >
-                Close
-              </Button>
-            </div>
-          </DialogContent>
+  <div className="flex justify-end mt-4">
+    <Button
+      variant="ghost"
+      className="border"
+      onClick={() => setSelectedProject(null)}
+    >
+      Close
+    </Button>
+  </div>
+</DialogContent>
+
         </Dialog>
       )}
     </div>
