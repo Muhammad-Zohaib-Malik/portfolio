@@ -23,6 +23,9 @@ import {
   SiMongodb,
   SiJsonwebtokens,
   SiZod,
+  SiNextdotjs,
+  SiRedis,
+  SiGoogle,
 } from "react-icons/si";
 
 interface Project {
@@ -34,14 +37,39 @@ interface Project {
 }
 
 const projects: Project[] = [
+  
   {
+  title: "File Storage App",
+  description:
+    "A secure and efficient file storage system enabling users to upload, manage, and protect their personal documents, images, and videos.",
+  link: "https://github.com/Muhammad-Zohaib-Malik/File-Storage-App",
+  features: [
+    "Secure file upload and download",
+    "Unique folder creation per user with isolated access",
+    "Support for various file formats including images, documents, and videos",
+    "Session-based authentication using Redis with a two-device login limit per user",
+    "Role-Based Access Control (RBAC) with Owner, Admin, and Manager permissions",
+    "Soft and hard delete functionality for users and their files",
+    "Google OAuth 2.0 integration for third-party authentication",
+    "Type-safe input validation using Zod"
+
+  ],
+  techStack: [
+    { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
+    { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
+    { name: "Redis", icon: <SiRedis className="text-red-500" /> },
+    { name: "Zod", icon: <SiZod className="text-purple-400" /> },
+    { name: "OAuth", icon: <SiGoogle className="text-blue-500" /> },
+  ],
+},
+{
     title: "Airline Booking Backend",
     description:
       "A microservices-based backend for an airline booking system, enabling scalable and secure flight and booking management.",
     link: "https://github.com/Muhammad-Zohaib-Malik/AIRLINE-BOOKING-BACKEND",
     features: [
       "Microservices architecture: Flight and Booking services",
-      "JWT-based authentication across services",
       "MongoDB transactions for atomic booking operations",
       "Mongoose indexing for optimized performance",
       "Zod for input validation and Winston for logging",
@@ -51,29 +79,10 @@ const projects: Project[] = [
       { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
       { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
-      { name: "JWT", icon: <SiJsonwebtokens className="text-yellow-400" /> },
       { name: "Zod", icon: <SiZod className="text-purple-500" /> },
     ],
-  },
-  {
-    title: "File Storage App",
-    description:
-      "A secure and efficient file storage system enabling users to upload and manage personal documents, images, and videos.",
-    link: "https://github.com/Muhammad-Zohaib-Malik/File-Storage-App",
-    features: [
-      "Secure file upload and download using JWT authentication",
-      "Unique folder generation per user",
-      "Support for various file formats including videos",
-      "Built with Node.js and Express.js",
-      "Scalable structure with protected access control",
-    ],
-    techStack: [
-      { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
-      { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
-      { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
-      { name: "JWT", icon: <SiJsonwebtokens className="text-yellow-400" /> },
-    ],
-  },
+  }
+
 ];
 
 export const ProjectsCard = () => {
