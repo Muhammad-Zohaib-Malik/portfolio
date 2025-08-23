@@ -60,7 +60,7 @@ const projects: Project[] = [
       { name: "Redis", icon: <SiRedis className="text-red-500" /> },
       { name: "Zod", icon: <SiZod className="text-purple-400" /> },
       { name: "OAuth", icon: <SiGoogle className="text-blue-500" /> },
-      { name: "AWS", icon: <SiAmazon className="text-orange-500" /> },
+      { name: "AWS", icon: <SiAmazon className="text-orange-300" /> },
     ],
   },
   {
