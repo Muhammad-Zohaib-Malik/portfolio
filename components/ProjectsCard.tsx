@@ -52,6 +52,8 @@ const projects: Project[] = [
       "Soft and hard delete functionality for users and their files",
       "Google OAuth 2.0 integration for third-party authentication",
       "Type-safe input validation using Zod",
+      "Nginx implemented as a reverse proxy",
+      "Stripe integration for subscription-based payments",
     ],
     techStack: [
       { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
