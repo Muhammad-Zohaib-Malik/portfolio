@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -21,12 +21,12 @@ import {
   SiNodedotjs,
   SiExpress,
   SiMongodb,
-  SiJsonwebtokens,
   SiZod,
-  SiNextdotjs,
   SiRedis,
   SiGoogle,
   SiAmazon,
+  SiNginx,
+  SiStripe
 } from "react-icons/si";
 
 interface Project {
@@ -61,6 +61,8 @@ const projects: Project[] = [
       { name: "Zod", icon: <SiZod className="text-purple-400" /> },
       { name: "OAuth", icon: <SiGoogle className="text-blue-500" /> },
       { name: "AWS", icon: <SiAmazon className="text-orange-300" /> },
+      { name: "Nginx", icon: <SiNginx className="text-green-500" /> },
+      { name: "Stripe", icon: <SiStripe className="text-purple-600" /> }
     ],
   },
   {
@@ -80,6 +82,7 @@ const projects: Project[] = [
       { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
       { name: "Zod", icon: <SiZod className="text-purple-500" /> },
+      
     ],
   },
 ];

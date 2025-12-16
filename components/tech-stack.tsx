@@ -23,6 +23,7 @@ const technologies = [
   { name: "Redis", icon: SiRedis, color: "#DC382D" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "AWS", icon: SiAmazon, color: "#FF9900" },
+  { name: "Nginx", icon: SiNodedotjs, color: "#009639" }
 ]
 
 export default function TechStack() {
