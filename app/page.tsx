@@ -81,7 +81,7 @@ export default function Home() {
                 className="inline-flex text-3xl sm:text-3xl md:text-5xl"
                 text="Architecting Backend"
               />
-              <span className="text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text animate-gradient ml-2 text-xl sm:text-3xl md:text-5xl font-bold mt-2 sm:mt-0">
+              <span className="text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text animate-gradient text-xl sm:text-3xl md:text-5xl font-bold mt-2 sm:mt-0">
                 Brilliance
               </span>
             </motion.h1>
