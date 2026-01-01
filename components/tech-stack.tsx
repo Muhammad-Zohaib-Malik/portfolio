@@ -10,7 +10,8 @@ import {
   SiAmazon,
   SiExpress,
   SiMongoose,
-  SiRedis
+  SiRedis,
+  SiWordpress
 } from "react-icons/si"
 
 const technologies = [
@@ -23,7 +24,8 @@ const technologies = [
   { name: "Redis", icon: SiRedis, color: "#DC382D" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "AWS", icon: SiAmazon, color: "#FF9900" },
-  { name: "Nginx", icon: SiNodedotjs, color: "#009639" }
+  { name: "Nginx", icon: SiNodedotjs, color: "#009639" },
+  { name: "WordPress", icon: SiWordpress, color: "#21759B" }
 ]
 
 export default function TechStack() {
