@@ -17,9 +17,8 @@ const experiences: ExperienceItem[] = [
     company: "Quantum Communication",
     role: "Web Developer",
     duration: "3 months",
-    description:
-      "Created websites using WordPress and worked on Inventory Management System admin side, focusing on user interface development and system administration.",
-    technologies: ["WordPress", "Nodejs", "ExpressJs"],
+    description: "Developed and maintained WordPress websites",
+    technologies: ["WordPress"],
   },
 ];
 
