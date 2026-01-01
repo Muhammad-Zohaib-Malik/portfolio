@@ -9,6 +9,7 @@ import { ScrollProgressDemo } from "@/components/ScrollProgress";
 import { SpinningText } from "@/components/magicui/spinning-text";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { ProjectsCard } from "@/components/ProjectsCard";
+import Experience from "@/components/Experience";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
@@ -103,6 +104,12 @@ export default function Home() {
             <section>
               <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
               <TechStack />
+            </section>
+
+            {/* Experience */}
+            <section>
+              <h3 className="text-xl font-semibold mb-4">Experience</h3>
+              <Experience />
             </section>
 
             {/* Projects */}
