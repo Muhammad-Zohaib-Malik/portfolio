@@ -35,6 +35,8 @@ interface Project {
   link: string;
   features: string[];
   techStack: { name: string; icon: JSX.Element }[];
+  deployment?: string[];
+  
 }
 
 const projects: Project[] = [
@@ -44,6 +46,7 @@ const projects: Project[] = [
       "A secure and efficient file storage system enabling users to upload, manage, and protect their personal documents, images, and videos.",
     link: "https://github.com/Muhammad-Zohaib-Malik/File-Storage-App",
     features: [
+      
       "Secure file upload and download using AWS S3 Bucket with accelerated delivery via CloudFront",
       "Unique folder creation per user with isolated access",
       "Winston for logging",
@@ -54,6 +57,10 @@ const projects: Project[] = [
       "Type-safe input validation using Zod",
       "Nginx implemented as a reverse proxy",
       "Stripe integration for subscription-based payments",
+    ],
+    deployment: [
+      "Deployed frontend on s3 using cloudfront",
+      "Deployed backend on EC2 using Nginx",
     ],
     techStack: [
       { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
@@ -91,11 +98,11 @@ const projects: Project[] = [
 
 export const ProjectsCard = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [dialogType, setDialogType] = useState<"features" | "tech" | null>(
+  const [dialogType, setDialogType] = useState<"features" | "tech" | "deployment" | null>(
     null
   );
 
-  const openDialog = (project: Project, type: "features" | "tech") => {
+  const openDialog = (project: Project, type: "features" | "tech" | "deployment" ) => {
     setSelectedProject(project);
     setDialogType(type);
   };
@@ -124,17 +131,8 @@ export const ProjectsCard = () => {
             <Button variant="ghost" onClick={() => openDialog(project, "tech")}>
               Tech
             </Button>
-            <Button asChild variant="ghost">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Github className="h-5 w-5" />
-                Code
-              </a>
-            </Button>
+            <Button variant="ghost" onClick={() => openDialog(project, "deployment")}>Deployment Steps</Button>
+            
           </CardFooter>
           <BorderBeam duration={8} size={100} />
         </Card>
@@ -151,7 +149,9 @@ export const ProjectsCard = () => {
               <DialogTitle className="text-white text-lg sm:text-xl">
                 {dialogType === "features"
                   ? `Features of ${selectedProject.title}`
-                  : `Tech Stack of ${selectedProject.title}`}
+                  : dialogType === "tech"
+                  ? `Tech Stack of ${selectedProject.title}`
+                  : `Deployment Steps for ${selectedProject.title}`}
               </DialogTitle>
             </DialogHeader>
 
@@ -161,7 +161,7 @@ export const ProjectsCard = () => {
                   <li key={index}>{feature}</li>
                 ))}
               </ul>
-            ) : (
+            ) : dialogType === "tech" ? (
               <div className="flex flex-wrap gap-3 pt-2">
                 {selectedProject.techStack.map((tech, index) => (
                   <div
@@ -173,6 +173,16 @@ export const ProjectsCard = () => {
                   </div>
                 ))}
               </div>
+            ) : dialogType === "deployment" && selectedProject.deployment ? (
+              <ul className="list-disc pl-5 space-y-2 text-white text-sm sm:text-base">
+                {selectedProject.deployment.map((step, index) => (
+                  <li key={index}>{step}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-white text-sm sm:text-base text-gray-400">
+                No deployment.
+              </p>
             )}
 
             <div className="flex justify-end mt-4">
@@ -184,6 +194,7 @@ export const ProjectsCard = () => {
                 Close
               </Button>
             </div>
+            
           </DialogContent>
         </Dialog>
       )}
