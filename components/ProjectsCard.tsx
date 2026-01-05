@@ -121,7 +121,7 @@ export const ProjectsCard = () => {
           <CardContent>
             <p className="text-sm text-gray-400">Click below to view more.</p>
           </CardContent>
-          <CardFooter className="flex flex-wrap gap-2 justify-between">
+          <CardFooter className="grid grid-cols-2 gap-2">
             <Button
               variant="ghost"
               onClick={() => openDialog(project, "features")}
@@ -131,8 +131,23 @@ export const ProjectsCard = () => {
             <Button variant="ghost" onClick={() => openDialog(project, "tech")}>
               Tech
             </Button>
-            <Button variant="ghost" onClick={() => openDialog(project, "deployment")}>Deployment Steps</Button>
-            
+            <Button variant="ghost" onClick={() => openDialog(project, "deployment")}>
+              Deployment Steps
+            </Button>
+            <Button
+              variant="ghost"
+              asChild
+            >
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <Github className="h-4 w-4" />
+                Code
+              </a>
+            </Button>
           </CardFooter>
           <BorderBeam duration={8} size={100} />
         </Card>
@@ -185,7 +200,21 @@ export const ProjectsCard = () => {
               </p>
             )}
 
-            <div className="flex justify-end mt-4">
+            <div className="flex justify-between items-center mt-4">
+              <Button
+                variant="ghost"
+                asChild
+                className="flex items-center gap-2"
+              >
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-4 w-4" />
+                  View Code
+                </a>
+              </Button>
               <Button
                 variant="ghost"
                 className="border"
