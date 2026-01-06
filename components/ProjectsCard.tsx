@@ -200,21 +200,7 @@ export const ProjectsCard = () => {
               </p>
             )}
 
-            <div className="flex justify-between items-center mt-4">
-              <Button
-                variant="ghost"
-                asChild
-                className="flex items-center gap-2"
-              >
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="h-4 w-4" />
-                  View Code
-                </a>
-              </Button>
+            <div className="flex justify-end items-center mt-4">
               <Button
                 variant="ghost"
                 className="border"
