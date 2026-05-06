@@ -16,9 +16,9 @@ const experiences: ExperienceItem[] = [
   {
     company: "Quantum Communication",
     role: "Web Developer",
-    duration: "3 months",
-    description: "Developed and maintained WordPress websites",
-    technologies: ["WordPress"],
+    duration: "8 months",
+    description: "Developed Inventory Management System for internal company use. Built and maintained the company's official website. Created Authentication & Authorization system. Worked on Document Management System.",
+    technologies: ["Node.js", "Express", "PostgreSQL", "WordPress"],
   },
 ];
 
@@ -32,14 +32,14 @@ export default function Experience() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          <Card className="group relative overflow-hidden border border-zinc-800/50 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-purple-500/30 hover:shadow-lg hover:shadow-purple-500/10">
+          <Card className="group relative overflow-hidden border border-zinc-800/50 bg-zinc-900/40 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-500/10">
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 {/* Left Section */}
                 <div className="flex-1 space-y-3">
                   <div className="flex items-start gap-3">
                     <motion.div
-                      className="p-2 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 group/icon"
+                      className="p-2 rounded-lg bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 group/icon"
                       initial={{ scale: 0, rotate: -180 }}
                       animate={{ scale: 1, rotate: 0 }}
                       transition={{
@@ -54,13 +54,13 @@ export default function Experience() {
                         transition: { duration: 0.5 },
                       }}
                     >
-                      <Briefcase className="h-5 w-5 text-purple-400" />
+                      <Briefcase className="h-5 w-5 text-emerald-400" />
                     </motion.div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:via-pink-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                      <h3 className="text-xl font-semibold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:via-cyan-400 group-hover:to-emerald-400 group-hover:bg-clip-text transition-all duration-300">
                         {exp.role}
                       </h3>
-                      <p className="text-lg text-purple-300 font-medium mt-1">
+                      <p className="text-lg text-emerald-300 font-medium mt-1">
                         {exp.company}
                       </p>
                     </div>
@@ -76,7 +76,7 @@ export default function Experience() {
                       {exp.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 text-xs font-medium rounded-full bg-zinc-800/50 border border-zinc-700/50 text-zinc-300 hover:border-purple-500/50 hover:text-purple-300 transition-colors duration-200"
+                          className="px-3 py-1 text-xs font-mono font-medium rounded-full bg-zinc-800/50 border border-zinc-700/50 text-zinc-300 hover:border-emerald-500/50 hover:text-emerald-300 transition-colors duration-200"
                         >
                           {tech}
                         </span>
@@ -97,7 +97,7 @@ export default function Experience() {
               </div>
 
               {/* Decorative line */}
-              <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-emerald-500 via-cyan-500 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </CardContent>
           </Card>
         </motion.div>

@@ -26,7 +26,11 @@ import {
   SiGoogle,
   SiAmazon,
   SiNginx,
-  SiStripe
+  SiStripe,
+  SiPostgresql,
+  SiSocketdotio,
+  SiJsonwebtokens,
+  SiReact
 } from "react-icons/si";
 
 interface Project {
@@ -36,7 +40,7 @@ interface Project {
   features: string[];
   techStack: { name: string; icon: JSX.Element }[];
   deployment?: string[];
-  
+
 }
 
 const projects: Project[] = [
@@ -46,7 +50,7 @@ const projects: Project[] = [
       "A secure and efficient file storage system enabling users to upload, manage, and protect their personal documents, images, and videos.",
     link: "https://github.com/Muhammad-Zohaib-Malik/File-Storage-App",
     features: [
-      
+
       "Secure file upload and download using AWS S3 Bucket with accelerated delivery via CloudFront",
       "Unique folder creation per user with isolated access",
       "Winston for logging",
@@ -75,23 +79,24 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Airline Booking Backend",
+    title: "Chat App (One-to-One)",
     description:
-      "A microservices-based backend for an airline booking system, enabling scalable and secure flight and booking management.",
-    link: "https://github.com/Muhammad-Zohaib-Malik/AIRLINE-BOOKING-BACKEND",
+      "A real-time one-to-one chat application with instant messaging, user authentication, and live presence indicators.",
+    link: "https://github.com/Muhammad-Zohaib-Malik/Chat_app.git",
     features: [
-      "Microservices architecture: Flight and Booking services",
-      "MongoDB transactions for atomic booking operations",
-      "Mongoose indexing for optimized performance",
-      "Zod for input validation and Winston for logging",
-      "Automated booking cancellation with cron job",
+      "Real-time one-to-one messaging using Socket.io",
+      "JWT-based authentication and authorization",
+      "PostgreSQL database for persistent message storage",
+      "Online/offline status indicators",
+      "React frontend with responsive UI",
     ],
     techStack: [
       { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
       { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
-      { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
-      { name: "Zod", icon: <SiZod className="text-purple-500" /> },
-      
+      { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
+      { name: "Socket.io", icon: <SiSocketdotio className="text-white" /> },
+      { name: "JWT", icon: <SiJsonwebtokens className="text-pink-400" /> },
+      { name: "React", icon: <SiReact className="text-cyan-400" /> },
     ],
   },
 ];
@@ -102,7 +107,7 @@ export const ProjectsCard = () => {
     null
   );
 
-  const openDialog = (project: Project, type: "features" | "tech" | "deployment" ) => {
+  const openDialog = (project: Project, type: "features" | "tech" | "deployment") => {
     setSelectedProject(project);
     setDialogType(type);
   };
@@ -165,8 +170,8 @@ export const ProjectsCard = () => {
                 {dialogType === "features"
                   ? `Features of ${selectedProject.title}`
                   : dialogType === "tech"
-                  ? `Tech Stack of ${selectedProject.title}`
-                  : `Deployment Steps for ${selectedProject.title}`}
+                    ? `Tech Stack of ${selectedProject.title}`
+                    : `Deployment Steps for ${selectedProject.title}`}
               </DialogTitle>
             </DialogHeader>
 
@@ -209,7 +214,7 @@ export const ProjectsCard = () => {
                 Close
               </Button>
             </div>
-            
+
           </DialogContent>
         </Dialog>
       )}
