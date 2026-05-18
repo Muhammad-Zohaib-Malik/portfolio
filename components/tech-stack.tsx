@@ -19,7 +19,9 @@ import {
   SiCss3,
   SiTailwindcss,
   SiNginx,
-  SiGit
+  SiGit,
+  SiPostgresql,
+  SiGrafana
 } from "react-icons/si"
 import { motion } from "framer-motion"
 
@@ -41,7 +43,9 @@ const technologies = [
   { name: "Nginx", icon: SiNginx, color: "#009639" },
   { name: "Git", icon: SiGit, color: "#F05032" },
   { name: "Prometheus", icon: SiPrometheus, color: "#E6522C" },
-  { name: "WordPress", icon: SiWordpress, color: "#21759B" }
+  { name: "Grafana", icon: SiGrafana, color: "#F46800" },
+  { name: "WordPress", icon: SiWordpress, color: "#21759B" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" }
 ]
 
 export default function TechStack() {

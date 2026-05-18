@@ -18,9 +18,9 @@ const terminalSequence: TerminalLine[] = [
   { type: "command", text: "cat skills.json", delay: 500 },
   { type: "output", text: "{", delay: 50 },
   { type: "success", text: '  "frontend": ["React", "Next.js", "TypeScript", "HTML/CSS"],', delay: 50 },
-  { type: "success", text: '  "backend":  ["Node.js", "Express", "MongoDB", "Redis"],', delay: 50 },
+  { type: "success", text: '  "backend":  ["Node.js", "Express", "PostgreSQL", "MongoDB", "Redis"],', delay: 50 },
   { type: "success", text: '  "devops":   ["Docker", "AWS", "Nginx", "CI/CD"],', delay: 50 },
-  { type: "success", text: '  "tools":    ["Git", "Prometheus", "Winston", "Zod"]', delay: 50 },
+  { type: "success", text: '  "observability": ["Prometheus", "Grafana"],', delay: 50 },
   { type: "output", text: "}", delay: 100 },
   { type: "blank", text: "", delay: 400 },
 
