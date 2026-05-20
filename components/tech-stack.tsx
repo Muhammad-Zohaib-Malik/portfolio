@@ -14,7 +14,6 @@ import {
   SiWordpress,
   SiPrometheus,
   SiReact,
-  SiNextdotjs,
   SiHtml5,
   SiCss3,
   SiTailwindcss,
@@ -27,7 +26,6 @@ import { motion } from "framer-motion"
 
 const technologies = [
   { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
   { name: "HTML5", icon: SiHtml5, color: "#E34F26" },

@@ -21,13 +21,12 @@ export const metadata: Metadata = {
     template: "%s — Muhammad Zohaib Malik",
   },
   description:
-    "Muhammad Zohaib Malik — Full Stack Developer specializing in React, Next.js, Node.js, MongoDB, AWS, and Docker. Building robust, scalable systems from frontend to backend.",
+    "Muhammad Zohaib Malik — Full Stack Developer specializing in React, Node.js, MongoDB, AWS, and Docker. Building robust, scalable systems from frontend to backend.",
   keywords: [
     "Muhammad Zohaib Malik",
     "Full Stack Developer",
     "Web Developer",
     "React Developer",
-    "Next.js Developer",
     "Node.js Developer",
     "MERN Stack Developer",
     "Backend Developer",
@@ -72,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "Muhammad Zohaib Malik — Portfolio",
     title: "Muhammad Zohaib Malik | Full Stack Developer",
     description:
-      "Full Stack Developer specializing in React, Next.js, Node.js, MongoDB, AWS & Docker. Building production-grade, scalable web applications.",
+      "Full Stack Developer specializing in React, Node.js, MongoDB, AWS & Docker. Building production-grade, scalable web applications.",
     images: [
       {
         url: "/og-image.png",
@@ -89,7 +88,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Muhammad Zohaib Malik | Full Stack Developer",
     description:
-      "Full Stack Developer specializing in React, Next.js, Node.js, MongoDB, AWS & Docker.",
+      "Full Stack Developer specializing in React, Node.js, MongoDB, AWS & Docker.",
     images: ["/og-image.png"],
     creator: "@zohaib_malik", // ← Replace with your Twitter handle if you have one
   },
@@ -130,7 +129,7 @@ export default function RootLayout({
     image: `${siteUrl}/profile.jpg`,
     jobTitle: "Full Stack Developer",
     description:
-      "Full Stack Developer specializing in React, Next.js, Node.js, MongoDB, AWS, and Docker.",
+      "Full Stack Developer specializing in React, Node.js, MongoDB, AWS, and Docker.",
     address: {
       "@type": "PostalAddress",
       addressCountry: "PK",
@@ -141,7 +140,6 @@ export default function RootLayout({
     ],
     knowsAbout: [
       "React",
-      "Next.js",
       "Node.js",
       "Express.js",
       "MongoDB",
