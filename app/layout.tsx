@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
-const siteUrl = "https://zohaibaay.tech" // ← Replace with your actual domain
+const siteUrl = "https://zohaibaay.tech"
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0f",
