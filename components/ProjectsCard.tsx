@@ -30,13 +30,16 @@ import {
   SiPostgresql,
   SiSocketdotio,
   SiJsonwebtokens,
-  SiReact
+  SiReact,
+  SiElasticsearch,
+  SiRabbitmq
 } from "react-icons/si";
 
 interface Project {
   title: string;
   description: string;
   link: string;
+  liveDemo?: string;
   features: string[];
   techStack: { name: string; icon: JSX.Element }[];
   deployment?: string[];
@@ -45,58 +48,56 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "File Storage App",
+    title: "File Storage System",
     description:
-      "A secure and efficient file storage system enabling users to upload, manage, and protect their personal documents, images, and videos.",
-    link: "https://github.com/Muhammad-Zohaib-Malik/File-Storage-App",
+      "Developed and deployed a full-stack cloud storage platform with scalable architecture.",
+    link: "https://github.com/Muhammad-Zohaib-Malik/File-Storage",
+    liveDemo: "https://storemyfiles.netlify.app",
     features: [
-
-      "Secure file upload and download using AWS S3 Bucket with accelerated delivery via CloudFront",
-      "Unique folder creation per user with isolated access",
-      "Winston for logging",
-      "Session-based authentication using Redis with a two-device login limit per user",
-      "Role-Based Access Control (RBAC) with Owner, Admin, and Manager permissions",
-      "Soft and hard delete functionality for users and their files",
-      "Google OAuth 2.0 integration for third-party authentication",
-      "Type-safe input validation using Zod",
-      "Nginx implemented as a reverse proxy",
-      "Stripe integration for subscription-based payments",
+      "Deployed backend services on AWS EC2 and Render, and frontend on Netlify and AWS CloudFront.",
+      "Implemented CI/CD pipelines using GitHub Actions for automated deployments.",
+      "Integrated AWS S3 for secure file storage and CloudFront CDN for optimized content delivery.",
+      "Implemented OAuth Authentication (Google, GitHub) and Two-Factor Authentication (2FA).",
+      "Developed Stripe-based Subscription Management for payments and plan upgrades.",
+      "Utilized Redis Session Management for secure multi-device access control.",
     ],
     deployment: [
-      "Deployed frontend on s3 using cloudfront",
-      "Deployed backend on EC2 using Nginx",
+      "Deployed frontend on Netlify and s3 using cloudfront",
+      "Deployed backend on EC2 using Nginx and Render",
     ],
     techStack: [
       { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
       { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
       { name: "Redis", icon: <SiRedis className="text-red-500" /> },
-      { name: "Zod", icon: <SiZod className="text-purple-400" /> },
-      { name: "OAuth", icon: <SiGoogle className="text-blue-500" /> },
+      { name: "React.js", icon: <SiReact className="text-cyan-400" /> },
       { name: "AWS", icon: <SiAmazon className="text-orange-300" /> },
-      { name: "Nginx", icon: <SiNginx className="text-green-500" /> },
-      { name: "Stripe", icon: <SiStripe className="text-purple-600" /> }
     ],
   },
   {
-    title: "Chat App (One-to-One)",
+    title: "EDOP - Enterprise Distributed Order Pipeline",
     description:
-      "A real-time one-to-one chat application with instant messaging, user authentication, and live presence indicators.",
-    link: "https://github.com/Muhammad-Zohaib-Malik/Chat_app.git",
+      "Built a Microservices-Based Order Management Platform.",
+    link: "https://github.com/Muhammad-Zohaib-Malik/EDOP",
+    liveDemo: "https://meredukaan.netlify.app/",
     features: [
-      "Real-time one-to-one messaging using Socket.io",
-      "JWT-based authentication and authorization",
-      "PostgreSQL database for persistent message storage",
-      "Online/offline status indicators",
-      "React frontend with responsive UI",
+      "Implemented an API Gateway for request routing, authentication, and service communication.",
+      "Developed Authentication, Inventory, Order, Payment, and Notification Services.",
+      "Integrated Stripe for secure payment processing and subscription handling.",
+      "Integrated Elasticsearch for fuzzy search and improved product discovery.",
+      "Utilized RabbitMQ for asynchronous and event-driven communication between services.",
+    ],
+    deployment: [
+      "Deployed frontend on Netlify",
+      "Deployed backend on Render",
     ],
     techStack: [
       { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
       { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
       { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
-      { name: "Socket.io", icon: <SiSocketdotio className="text-white" /> },
-      { name: "JWT", icon: <SiJsonwebtokens className="text-pink-400" /> },
-      { name: "React", icon: <SiReact className="text-cyan-400" /> },
+      { name: "React.js", icon: <SiReact className="text-cyan-400" /> },
+      { name: "Elasticsearch", icon: <SiElasticsearch className="text-green-300" /> },
+      { name: "RabbitMQ", icon: <SiRabbitmq className="text-orange-400" /> },
     ],
   },
 ];
@@ -120,39 +121,37 @@ export const ProjectsCard = () => {
           className="relative w-full overflow-hidden bg-[#121314]"
         >
           <CardHeader>
-            <CardTitle>{project.title}</CardTitle>
-            <CardDescription>{project.description}</CardDescription>
+            <CardTitle className="text-xl font-bold text-emerald-400">{project.title}</CardTitle>
+            <CardDescription className="text-zinc-400 text-sm leading-relaxed mt-2">{project.description}</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-gray-400">Click below to view more.</p>
+            <p className="text-xs text-zinc-500">Click below to view more.</p>
           </CardContent>
-          <CardFooter className="grid grid-cols-2 gap-2">
-            <Button
-              variant="ghost"
-              onClick={() => openDialog(project, "features")}
-            >
+          <CardFooter className="flex flex-wrap gap-2 justify-center">
+            <Button variant="ghost" size="sm" className="text-xs text-zinc-300 hover:text-white" onClick={() => openDialog(project, "features")}>
               Features
             </Button>
-            <Button variant="ghost" onClick={() => openDialog(project, "tech")}>
+            <Button variant="ghost" size="sm" className="text-xs text-zinc-300 hover:text-white" onClick={() => openDialog(project, "tech")}>
               Tech
             </Button>
-            <Button variant="ghost" onClick={() => openDialog(project, "deployment")}>
-              Deployment Steps
-            </Button>
-            <Button
-              variant="ghost"
-              asChild
-            >
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2"
-              >
-                <Github className="h-4 w-4" />
+            {project.deployment && (
+              <Button variant="ghost" size="sm" className="text-xs text-zinc-300 hover:text-white" onClick={() => openDialog(project, "deployment")}>
+                Deployment
+              </Button>
+            )}
+            <Button variant="ghost" size="sm" className="text-xs text-zinc-300 hover:text-white" asChild>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5">
+                <Github className="h-3.5 w-3.5" />
                 Code
               </a>
             </Button>
+            {project.liveDemo && (
+              <Button variant="ghost" size="sm" className="text-xs text-emerald-400 hover:text-emerald-300" asChild>
+                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5">
+                  Live Demo
+                </a>
+              </Button>
+            )}
           </CardFooter>
           <BorderBeam duration={8} size={100} />
         </Card>

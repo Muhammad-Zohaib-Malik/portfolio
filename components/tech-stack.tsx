@@ -9,10 +9,8 @@ import {
   SiDocker,
   SiAmazon,
   SiExpress,
-  SiMongoose,
   SiRedis,
   SiWordpress,
-  SiPrometheus,
   SiReact,
   SiHtml5,
   SiCss3,
@@ -20,7 +18,7 @@ import {
   SiNginx,
   SiGit,
   SiPostgresql,
-  SiGrafana
+  SiGithubactions
 } from "react-icons/si"
 import { motion } from "framer-motion"
 
@@ -34,16 +32,14 @@ const technologies = [
   { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
   { name: "Express.js", icon: SiExpress, color: "#ffffff" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-  { name: "Mongoose", icon: SiMongoose, color: "#880000" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
   { name: "Redis", icon: SiRedis, color: "#DC382D" },
-  { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "AWS", icon: SiAmazon, color: "#FF9900" },
+  { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "Nginx", icon: SiNginx, color: "#009639" },
   { name: "Git", icon: SiGit, color: "#F05032" },
-  { name: "Prometheus", icon: SiPrometheus, color: "#E6522C" },
-  { name: "Grafana", icon: SiGrafana, color: "#F46800" },
-  { name: "WordPress", icon: SiWordpress, color: "#21759B" },
-  { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" }
+  { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
+  { name: "WordPress", icon: SiWordpress, color: "#21759B" }
 ]
 
 export default function TechStack() {

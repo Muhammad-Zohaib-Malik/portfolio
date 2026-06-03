@@ -14,11 +14,18 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    company: "Quantum Communication",
-    role: "Web Developer",
-    duration: "8 months",
-    description: "Developed Inventory Management System for internal company use. Built and maintained the company's official website. Created Authentication & Authorization system. Worked on Document Management System.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "WordPress"],
+    company: "Quantum Communication Lab",
+    role: "Full Stack Developer Intern",
+    duration: "Present",
+    description: "Developed a Collaboration Suite to improve internal communication and team productivity. Built Authentication and User Service using Node.js, Express.js, PostgreSQL, and Redis. Improved backend performance and contributed to scalable system architecture.",
+    technologies: ["Node.js", "Express.js", "PostgreSQL", "Redis"],
+  },
+  {
+    company: "Common Criteria Pakistan Lab",
+    role: "Full Stack Developer Intern",
+    duration: "Past",
+    description: "Built an Inventory Management System for asset tracking and reporting. Developed a secure Document Management System (DMS) for file storage and management. Developed and maintained the company website using WordPress.",
+    technologies: ["Node.js", "Express.js", "WordPress"],
   },
 ];
 

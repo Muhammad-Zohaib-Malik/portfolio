@@ -9,6 +9,7 @@ import { SpinningText } from "@/components/magicui/spinning-text";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { ProjectsCard } from "@/components/ProjectsCard";
 import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
@@ -129,10 +130,7 @@ export default function Home() {
 
               <p className="text-zinc-500 max-w-2xl text-sm font-mono leading-relaxed">
                 <span className="text-zinc-600" aria-hidden="true">// </span>
-                Building robust, scalable systems from frontend to backend.
-                Passionate about clean architecture, API design, cloud
-                infrastructure, and crafting seamless digital experiences that
-                perform at scale.
+                Full Stack Developer with 1+ year of experience building web applications and backend systems. Experienced in developing APIs, implementing authentication and authorization, integrating third-party services, and deploying production-ready applications using modern cloud and DevOps practices.
               </p>
             </motion.section>
 
@@ -184,6 +182,24 @@ export default function Home() {
                     </span>
                   </h2>
                   <ProjectsCard />
+                </div>
+              </CodeSection>
+            </section>
+
+            {/* Education */}
+            <section id="education" aria-label="Education">
+              <CodeSection filename="education.ts" icon="🎓" delay={0.25} linesCount={6}>
+                <div className="space-y-3">
+                  <h2 className="text-lg font-semibold flex items-center gap-2">
+                    <span className="text-emerald-400 font-mono text-sm">
+                      export
+                    </span>
+                    <span className="text-cyan-300 font-mono">education</span>
+                    <span className="text-zinc-600 font-mono text-sm">
+                      : Degree[]
+                    </span>
+                  </h2>
+                  <Education />
                 </div>
               </CodeSection>
             </section>

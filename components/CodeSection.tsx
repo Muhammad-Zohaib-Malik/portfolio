@@ -7,6 +7,7 @@ interface CodeSectionProps {
   icon?: string;
   children: React.ReactNode;
   delay?: number;
+  linesCount?: number;
 }
 
 export default function CodeSection({
@@ -14,6 +15,7 @@ export default function CodeSection({
   icon = "📄",
   children,
   delay = 0,
+  linesCount = 20,
 }: CodeSectionProps) {
   return (
     <motion.div
@@ -48,7 +50,7 @@ export default function CodeSection({
         <div className="flex">
           {/* Line numbers gutter */}
           <div className="hidden sm:flex flex-col items-end py-5 px-3 bg-[#0a0e14]/50 border-r border-zinc-800/30 select-none min-w-[3rem]">
-            {Array.from({ length: 20 }, (_, i) => (
+            {Array.from({ length: linesCount }, (_, i) => (
               <span
                 key={i}
                 className="text-[11px] font-mono text-zinc-700 leading-[1.8]"
