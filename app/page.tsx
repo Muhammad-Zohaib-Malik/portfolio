@@ -90,7 +90,7 @@ export default function Home() {
                 </div>
               </CardContent>
               <CardFooter className="w-full flex items-center justify-center">
-                <a href="/MyCV.pdf" download aria-label="Download Muhammad Zohaib Malik's CV (PDF)">
+                <a href="/zohaib_cv.pdf" download aria-label="Download Muhammad Zohaib Malik's CV (PDF)">
                   <ShimmerButton className="shadow-2xl">
                     <span className="text-sm font-mono font-medium tracking-tight text-white lg:text-base flex items-center gap-2">
                       <span className="text-emerald-400" aria-hidden="true">&gt;</span> Download CV
