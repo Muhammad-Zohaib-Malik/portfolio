@@ -19,6 +19,11 @@ const config = {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			serif: ['var(--font-playfair)', 'serif'],
+  			condensed: ['var(--font-oswald)', 'sans-serif'],
+  			script: ['var(--font-dancing)', 'cursive'],
+  		},
   		colors: {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',

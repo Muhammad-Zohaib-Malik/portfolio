@@ -1,35 +1,13 @@
-import { JSX, useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { BorderBeam } from "@/components/magicui/border-beam";
-import { Github } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { JSX } from "react";
+import { Github, ExternalLink, Code2 } from "lucide-react";
 
 import {
   SiNodedotjs,
   SiExpress,
   SiMongodb,
-  SiZod,
   SiRedis,
-  SiGoogle,
   SiAmazon,
-  SiNginx,
-  SiStripe,
   SiPostgresql,
-  SiSocketdotio,
-  SiJsonwebtokens,
   SiReact,
   SiElasticsearch,
   SiRabbitmq
@@ -43,180 +21,142 @@ interface Project {
   features: string[];
   techStack: { name: string; icon: JSX.Element }[];
   deployment?: string[];
-
 }
 
 const projects: Project[] = [
   {
-    title: "File Storage System",
+    title: "File Storage",
     description:
-      "Developed and deployed a full-stack cloud storage platform with scalable architecture.",
+      "A robust, full-stack cloud storage platform with a scalable, highly-available architecture and secure user management.",
     link: "https://github.com/Muhammad-Zohaib-Malik/File-Storage",
     liveDemo: "https://storemyfiles.netlify.app",
     features: [
-      "Deployed backend services on AWS EC2 and Render, and frontend on Netlify and AWS CloudFront.",
-      "Implemented CI/CD pipelines using GitHub Actions for automated deployments.",
-      "Integrated AWS S3 for secure file storage and CloudFront CDN for optimized content delivery.",
-      "Implemented OAuth Authentication (Google, GitHub) and Two-Factor Authentication (2FA).",
-      "Developed Stripe-based Subscription Management for payments and plan upgrades.",
-      "Utilized Redis Session Management for secure multi-device access control.",
+      "AWS EC2, Render, Netlify & CloudFront CDN.",
+      "CI/CD pipelines via GitHub Actions.",
+      "AWS S3 for secure file storage.",
+      "OAuth & Two-Factor Auth (2FA).",
+      "Stripe-based Subscriptions.",
+      "Redis Session Management.",
     ],
     deployment: [
-      "Deployed frontend on Netlify and s3 using cloudfront",
-      "Deployed backend on EC2 using Nginx and Render",
+      "Frontend: Netlify & S3 via CloudFront",
+      "Backend: EC2 (Nginx) & Render",
     ],
     techStack: [
-      { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
-      { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
-      { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> },
-      { name: "Redis", icon: <SiRedis className="text-red-500" /> },
-      { name: "React.js", icon: <SiReact className="text-cyan-400" /> },
-      { name: "AWS", icon: <SiAmazon className="text-orange-300" /> },
+      { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5" /> },
+      { name: "Express", icon: <SiExpress className="w-5 h-5" /> },
+      { name: "MongoDB", icon: <SiMongodb className="w-5 h-5" /> },
+      { name: "Redis", icon: <SiRedis className="w-5 h-5" /> },
+      { name: "React", icon: <SiReact className="w-5 h-5" /> },
+      { name: "AWS", icon: <SiAmazon className="w-5 h-5" /> },
     ],
   },
   {
-    title: "EDOP - Enterprise Distributed Order Pipeline",
+    title: "EDOP Platform",
     description:
-      "Built a Microservices-Based Order Management Platform.",
+      "Enterprise Distributed Order Pipeline: A complex microservices-based Order Management Platform for modern commerce.",
     link: "https://github.com/Muhammad-Zohaib-Malik/EDOP",
     liveDemo: "https://meredukaan.netlify.app/",
     features: [
-      "Implemented an API Gateway for request routing, authentication, and service communication.",
-      "Developed Authentication, Inventory, Order, Payment, and Notification Services.",
-      "Integrated Stripe for secure payment processing and subscription handling.",
-      "Integrated Elasticsearch for fuzzy search and improved product discovery.",
-      "Utilized RabbitMQ for asynchronous and event-driven communication between services.",
+      "API Gateway for routing & auth.",
+      "Microservices: Auth, Inventory, Order, Payment.",
+      "Stripe for payment processing.",
+      "Elasticsearch for fuzzy product search.",
+      "RabbitMQ for event-driven messaging.",
     ],
     deployment: [
-      "Deployed frontend on Netlify",
-      "Deployed backend on Render",
+      "Frontend: Netlify",
+      "Backend: Render",
     ],
     techStack: [
-      { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
-      { name: "Express.js", icon: <SiExpress className="text-gray-300" /> },
-      { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
-      { name: "React.js", icon: <SiReact className="text-cyan-400" /> },
-      { name: "Elasticsearch", icon: <SiElasticsearch className="text-green-300" /> },
-      { name: "RabbitMQ", icon: <SiRabbitmq className="text-orange-400" /> },
+      { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5" /> },
+      { name: "Express", icon: <SiExpress className="w-5 h-5" /> },
+      { name: "Postgres", icon: <SiPostgresql className="w-5 h-5" /> },
+      { name: "React", icon: <SiReact className="w-5 h-5" /> },
+      { name: "Elastic", icon: <SiElasticsearch className="w-5 h-5" /> },
+      { name: "RabbitMQ", icon: <SiRabbitmq className="w-5 h-5" /> },
     ],
   },
 ];
 
 export const ProjectsCard = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [dialogType, setDialogType] = useState<"features" | "tech" | "deployment" | null>(
-    null
-  );
-
-  const openDialog = (project: Project, type: "features" | "tech" | "deployment") => {
-    setSelectedProject(project);
-    setDialogType(type);
-  };
-
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8">
       {projects.map((project, index) => (
-        <Card
-          key={index}
-          className="relative w-full overflow-hidden bg-[#121314]"
+        <div 
+          key={index} 
+          className="group relative flex flex-col w-full"
         >
-          <CardHeader>
-            <CardTitle className="text-xl font-bold text-emerald-400">{project.title}</CardTitle>
-            <CardDescription className="text-zinc-400 text-sm leading-relaxed mt-2">{project.description}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-zinc-500">Click below to view more.</p>
-          </CardContent>
-          <CardFooter className="flex flex-wrap gap-2 justify-center">
-            <Button variant="ghost" size="sm" className="text-xs text-zinc-300 hover:text-white" onClick={() => openDialog(project, "features")}>
-              Features
-            </Button>
-            <Button variant="ghost" size="sm" className="text-xs text-zinc-300 hover:text-white" onClick={() => openDialog(project, "tech")}>
-              Tech
-            </Button>
-            {project.deployment && (
-              <Button variant="ghost" size="sm" className="text-xs text-zinc-300 hover:text-white" onClick={() => openDialog(project, "deployment")}>
-                Deployment
-              </Button>
-            )}
-            <Button variant="ghost" size="sm" className="text-xs text-zinc-300 hover:text-white" asChild>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5">
-                <Github className="h-3.5 w-3.5" />
-                Code
-              </a>
-            </Button>
-            {project.liveDemo && (
-              <Button variant="ghost" size="sm" className="text-xs text-emerald-400 hover:text-emerald-300" asChild>
-                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5">
-                  Live Demo
-                </a>
-              </Button>
-            )}
-          </CardFooter>
-          <BorderBeam duration={8} size={100} />
-        </Card>
-      ))}
-
-      {/* Shared Dialog for Features / Tech Stack */}
-      {selectedProject && dialogType && (
-        <Dialog
-          open={!!selectedProject}
-          onOpenChange={() => setSelectedProject(null)}
-        >
-          <DialogContent className="bg-black text-white border border-gray-700 w-[90vw] sm:max-w-2xl mx-auto px-4 py-6">
-            <DialogHeader>
-              <DialogTitle className="text-white text-lg sm:text-xl">
-                {dialogType === "features"
-                  ? `Features of ${selectedProject.title}`
-                  : dialogType === "tech"
-                    ? `Tech Stack of ${selectedProject.title}`
-                    : `Deployment Steps for ${selectedProject.title}`}
-              </DialogTitle>
-            </DialogHeader>
-
-            {dialogType === "features" ? (
-              <ul className="list-disc pl-5 space-y-2 text-white text-sm sm:text-base">
-                {selectedProject.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-            ) : dialogType === "tech" ? (
-              <div className="flex flex-wrap gap-3 pt-2">
-                {selectedProject.techStack.map((tech, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 px-3 py-1 bg-[#1f1f1f] rounded-md"
-                  >
-                    {tech.icon}
-                    <span className="text-sm">{tech.name}</span>
-                  </div>
-                ))}
-              </div>
-            ) : dialogType === "deployment" && selectedProject.deployment ? (
-              <ul className="list-disc pl-5 space-y-2 text-white text-sm sm:text-base">
-                {selectedProject.deployment.map((step, index) => (
-                  <li key={index}>{step}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-white text-sm sm:text-base text-gray-400">
-                No deployment.
-              </p>
-            )}
-
-            <div className="flex justify-end items-center mt-4">
-              <Button
-                variant="ghost"
-                className="border"
-                onClick={() => setSelectedProject(null)}
-              >
-                Close
-              </Button>
+          {/* Icons Row */}
+          <div className="flex justify-between items-center mb-6">
+            <div className="text-[#0b6e4f] transition-all duration-300">
+              <Code2 className="w-8 h-8" />
             </div>
+            
+            <div className="flex items-center gap-4">
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-black/50 hover:text-black transition-all duration-300"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              {project.liveDemo && (
+                <a 
+                  href={project.liveDemo} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="text-black/50 hover:text-[#0b6e4f] transition-all duration-300"
+                >
+                  <ExternalLink className="w-6 h-6" />
+                </a>
+              )}
+            </div>
+          </div>
 
-          </DialogContent>
-        </Dialog>
-      )}
+          {/* Title & Desc */}
+          <div className="mb-6">
+            <h3 className="font-sans text-3xl md:text-4xl font-bold tracking-tighter leading-tight text-black group-hover:text-[#0b6e4f] transition-colors duration-500 mb-3">
+              {project.title}.
+            </h3>
+            <p className="font-sans text-lg text-black/70 leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+
+          {/* Tech Stack Pills */}
+          <div className="flex flex-wrap gap-2">
+            {project.techStack.map((tech, techIndex) => (
+              <div 
+                key={techIndex}
+                className="flex items-center gap-2 px-3 py-1.5 bg-white border border-black/5 rounded-lg text-black/60 font-sans text-xs font-bold group-hover:border-[#0b6e4f]/20 group-hover:text-[#0b6e4f] transition-colors duration-300"
+              >
+                {tech.icon}
+                <span>{tech.name}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full h-px bg-black/5 my-8"></div>
+
+          {/* Features List */}
+          <div>
+            <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-black/40 mb-4">
+              Key Features
+            </h4>
+            <ul className="space-y-3">
+              {project.features.map((feature, featureIndex) => (
+                <li key={featureIndex} className="flex items-start gap-3 text-black/70 text-sm leading-relaxed font-medium">
+                  <div className="w-1.5 h-1.5 rounded-full bg-black/20 mt-1.5 shrink-0 group-hover:bg-[#0b6e4f] transition-colors duration-300"></div>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      ))}
     </div>
   );
 };

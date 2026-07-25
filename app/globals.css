@@ -28,8 +28,6 @@
 }
 
 body {
-  background-color: #0a0a0f;
-  color: hsl(var(--foreground));
   font-family: 'Inter', sans-serif;
 }
 
@@ -194,6 +192,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }

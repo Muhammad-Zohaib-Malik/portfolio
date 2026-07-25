@@ -1,10 +1,13 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, JetBrains_Mono } from "next/font/google"
+import { Inter, JetBrains_Mono, Playfair_Display, Oswald, Dancing_Script } from "next/font/google"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
+const playfair = Playfair_Display({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-playfair" })
+const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" })
+const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-dancing" })
 
 const siteUrl = "https://zohaibaay.tech"
 
@@ -169,7 +172,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
@@ -184,7 +187,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${jetbrains.variable} ${inter.className}`}>{children}</body>
+      <body className={`bg-[#F2E4CA] text-black ${inter.variable} ${jetbrains.variable} ${playfair.variable} ${oswald.variable} ${dancingScript.variable} ${inter.className}`}>{children}</body>
     </html>
   )
 }
