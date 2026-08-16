@@ -1,21 +1,38 @@
-import type React from "react"
-import type { Metadata, Viewport } from "next"
-import { Inter, JetBrains_Mono, Playfair_Display, Oswald, Dancing_Script } from "next/font/google"
-import "./globals.css"
+import type React from "react";
+import type { Metadata, Viewport } from "next";
+import {
+  Inter,
+  JetBrains_Mono,
+  Playfair_Display,
+  Oswald,
+  Dancing_Script,
+} from "next/font/google";
+import CustomCursor from "@/components/CustomCursor";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
-const playfair = Playfair_Display({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-playfair" })
-const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" })
-const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-dancing" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+});
+const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-dancing",
+});
 
-const siteUrl = "https://zohaibaay.tech"
+const siteUrl = "https://zohaibaay.tech";
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0f",
   width: "device-width",
   initialScale: 1,
-}
+};
 
 export const metadata: Metadata = {
   // ─── Core Meta ───────────────────────────────────────────
@@ -115,12 +132,12 @@ export const metadata: Metadata = {
 
   // ─── Category ────────────────────────────────────────────
   category: "technology",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   // JSON-LD Structured Data for Google Rich Results
   const personJsonLd = {
@@ -156,7 +173,7 @@ export default function RootLayout({
       "Backend Development",
       "System Architecture",
     ],
-  }
+  };
 
   const websiteJsonLd = {
     "@context": "https://schema.org",
@@ -169,7 +186,7 @@ export default function RootLayout({
       "@type": "Person",
       name: "Muhammad Zohaib Malik",
     },
-  }
+  };
 
   return (
     <html lang="en">
@@ -187,7 +204,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`bg-[#F2E4CA] text-black ${inter.variable} ${jetbrains.variable} ${playfair.variable} ${oswald.variable} ${dancingScript.variable} ${inter.className}`}>{children}</body>
+      <body
+        className={`bg-[#F2E4CA] text-black ${inter.variable} ${jetbrains.variable} ${playfair.variable} ${oswald.variable} ${dancingScript.variable} ${inter.className}`}
+      >
+        <CustomCursor />
+        {children}
+      </body>
     </html>
-  )
+  );
 }

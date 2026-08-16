@@ -2,14 +2,21 @@
 
 import React, { useMemo } from "react";
 import {
-  SiNodedotjs, SiExpress, SiMongodb, SiPostgresql,
-  SiDocker, SiRedis, SiAmazonwebservices, SiGit, SiLinux,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiDocker,
+  SiRedis,
+  SiAmazonwebservices,
+  SiGit,
+  SiLinux,
   SiRabbitmq,
   SiWordpress,
   SiNginx,
   SiPrometheus,
   SiGrafana,
-  SiGithubactions
+  SiGithubactions,
 } from "react-icons/si";
 
 const TECH_ICONS = [
@@ -29,7 +36,6 @@ const TECH_ICONS = [
   { Icon: SiPrometheus, color: "#FF5722", name: "Prometheus" },
   { Icon: SiGrafana, color: "#FF5722", name: "Grafana" },
   { Icon: SiGithubactions, color: "#2088FF", name: "GitHub Actions" },
-
 ];
 
 function randomFloat(min: number, max: number) {
@@ -40,7 +46,7 @@ export default function TechnologyEmitter() {
   const particles = useMemo(() => {
     const items: Array<{
       id: string;
-      tech: typeof TECH_ICONS[0];
+      tech: (typeof TECH_ICONS)[0];
       endX: number;
       endY: number;
       midX: number;
@@ -50,7 +56,7 @@ export default function TechnologyEmitter() {
       scale: number;
       rotation: number;
     }> = [];
-    
+
     // Create multiple instances of the icons for a continuous loop
     // 3 iterations = 27 icons floating
     for (let loop = 0; loop < 3; loop++) {
@@ -76,8 +82,12 @@ export default function TechnologyEmitter() {
 
   return (
     <div className="absolute top-[72%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-0 h-0 z-20 pointer-events-none">
-      <style dangerouslySetInnerHTML={{ __html: `
-        ${particles.map(p => `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+        ${particles
+          .map(
+            (p) => `
           @keyframes anim-${p.id} {
             0% {
               transform: translate3d(0px, 0px, 0) scale(0.2) rotate(0deg);
@@ -106,23 +116,36 @@ export default function TechnologyEmitter() {
             position: absolute;
             will-change: transform, opacity;
           }
-        `).join('\n')}
-      `}} />
+        `,
+          )
+          .join("\n")}
+      `,
+        }}
+      />
 
       {/* Render Icons */}
-      {particles.map(p => {
+      {particles.map((p) => {
         const { Icon, color } = p.tech;
         return (
-          <div key={p.id} className={`particle-${p.id} flex items-center justify-center -translate-x-1/2 -translate-y-1/2 pointer-events-auto`}>
-             <div className="relative group transition-transform duration-500 cursor-pointer">
-               {/* Clean, subtle glass badge */}
-               <div className="bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-white/30 flex items-center justify-center relative z-10 overflow-hidden">
-                 <Icon className="w-8 h-8 lg:w-10 lg:h-10 relative z-20" style={{ color }} />
-               </div>
-               
-               {/* Soft Glow */}
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] rounded-full opacity-15 blur-xl -z-10" style={{ backgroundColor: color }} />
-             </div>
+          <div
+            key={p.id}
+            className={`particle-${p.id} flex items-center justify-center -translate-x-1/2 -translate-y-1/2 pointer-events-auto`}
+          >
+            <div className="relative group transition-transform duration-500 cursor-pointer">
+              {/* Clean, subtle glass badge */}
+              <div className="bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-white/30 flex items-center justify-center relative z-10 overflow-hidden">
+                <Icon
+                  className="w-8 h-8 lg:w-10 lg:h-10 relative z-20"
+                  style={{ color }}
+                />
+              </div>
+
+              {/* Soft Glow */}
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] rounded-full opacity-15 blur-xl -z-10"
+                style={{ backgroundColor: color }}
+              />
+            </div>
           </div>
         );
       })}

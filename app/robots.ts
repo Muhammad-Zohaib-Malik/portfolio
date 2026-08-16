@@ -1,7 +1,7 @@
-import type { MetadataRoute } from "next"
+import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = "https://zohaibaay.tech" // ← Replace with your actual domain
+  const siteUrl = "https://zohaibaay.tech"; // ← Replace with your actual domain
 
   return {
     rules: [
@@ -12,5 +12,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
-  }
+  };
 }

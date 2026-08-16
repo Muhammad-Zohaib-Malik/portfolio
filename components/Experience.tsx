@@ -13,17 +13,19 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    company: "Quantum Communication Lab",
-    role: "Backend Developer Intern",
+    company: "Quantum Communications Lab",
+    role: "Backend Developer",
     duration: "2026",
-    description: "Developed a Collaboration Suite to improve internal communication and team productivity. Built Authentication and User Service using Node.js, Express.js, PostgreSQL, and Redis. Improved backend performance and contributed to scalable system architecture.",
+    description:
+      "Developed a Collaboration Suite to improve internal communication and team productivity. Built Authentication and User Service using Node.js, Express.js, PostgreSQL, and Redis. Improved backend performance and contributed to scalable system architecture.",
     technologies: ["Node.js", "Express.js", "PostgreSQL", "Redis"],
   },
   {
     company: "Common Criteria Pakistan Lab",
     role: "Backend Developer Intern",
     duration: "2025",
-    description: "Built an Inventory Management System for asset tracking and reporting. Developed a secure Document Management System (DMS) for file storage and management. Developed and maintained the company website using WordPress.",
+    description:
+      "Built an Inventory Management System for asset tracking and reporting. Developed a secure Document Management System (DMS) for file storage and management. Developed and maintained the company website using WordPress.",
     technologies: ["Node.js", "Express.js", "WordPress"],
   },
 ];
@@ -31,8 +33,6 @@ const experiences: ExperienceItem[] = [
 export default function Experience() {
   return (
     <div className="w-full">
-
-
       <div className="relative border-l-2 border-black/5 ml-2 md:ml-6 flex flex-col gap-24 py-4">
         {experiences.map((exp, index) => (
           <motion.div

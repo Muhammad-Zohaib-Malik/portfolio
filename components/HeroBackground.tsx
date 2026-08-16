@@ -41,7 +41,7 @@ export default function HeroBackground() {
         // Create a wave effect using sine and cosine functions
         const wave1 = Math.sin(time * this.speed + this.baseX * 0.005) * 50;
         const wave2 = Math.cos(time * this.speed + this.baseY * 0.005) * 50;
-        
+
         this.x = this.baseX + wave1;
         this.y = this.baseY + wave2;
       }
@@ -64,7 +64,7 @@ export default function HeroBackground() {
     const animate = (time: number) => {
       if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
-      
+
       particles.forEach((particle) => {
         particle.update(time);
         particle.draw(ctx);
@@ -95,8 +95,10 @@ export default function HeroBackground() {
       ref={canvasRef}
       className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-60"
       style={{
-        maskImage: "radial-gradient(ellipse at center right, black, transparent 80%)",
-        WebkitMaskImage: "radial-gradient(ellipse at center right, black, transparent 80%)",
+        maskImage:
+          "radial-gradient(ellipse at center right, black, transparent 80%)",
+        WebkitMaskImage:
+          "radial-gradient(ellipse at center right, black, transparent 80%)",
       }}
     />
   );

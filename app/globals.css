@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -28,7 +28,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Terminal scrollbar */
@@ -51,8 +51,14 @@ body {
 
 /* Cursor blink animation */
 @keyframes cursor-blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .animate-cursor-blink {
@@ -61,7 +67,7 @@ body {
 
 /* Scanline overlay effect */
 .scanlines::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
@@ -77,18 +83,28 @@ body {
 
 /* Glow text effect */
 .glow-text {
-  text-shadow: 0 0 10px rgba(0, 255, 65, 0.3), 0 0 40px rgba(0, 255, 65, 0.1);
+  text-shadow:
+    0 0 10px rgba(0, 255, 65, 0.3),
+    0 0 40px rgba(0, 255, 65, 0.1);
 }
 
 .glow-text-cyan {
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.3), 0 0 40px rgba(0, 229, 255, 0.1);
+  text-shadow:
+    0 0 10px rgba(0, 229, 255, 0.3),
+    0 0 40px rgba(0, 229, 255, 0.1);
 }
 
 /* Gradient text animation */
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .animate-gradient {
@@ -98,8 +114,15 @@ body {
 
 /* Pulse glow animation for cards */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.05); }
-  50% { box-shadow: 0 0 20px rgba(0, 255, 65, 0.1), 0 0 40px rgba(0, 229, 255, 0.05); }
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(0, 255, 65, 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(0, 255, 65, 0.1),
+      0 0 40px rgba(0, 229, 255, 0.05);
+  }
 }
 
 .hover-glow:hover {
@@ -114,8 +137,13 @@ body {
 
 /* Floating animation */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .animate-float {
@@ -124,10 +152,10 @@ body {
 
 /* Command prompt prefix styling */
 .cmd-prefix::before {
-  content: '>';
+  content: ">";
   color: #00ff41;
   margin-right: 8px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 600;
 }
 
