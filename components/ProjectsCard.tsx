@@ -61,7 +61,8 @@ const projects: Project[] = [
     title: "GoLocal",
     description:
       "A comprehensive event booking and management platform to discover, book, and organize local events with secure payment processing.",
-    link: "https://github.com/Muhammad-Zohaib-Malik/GoLocal",
+    link: "https://github.com/Muhammad-Zohaib-Malik/GoLocalBackend",
+    liveDemo: "https://golocalworld.netlify.app/",
     image: "/project3.png",
     techStack: [
       { name: "React", icon: <SiReact className="w-4 h-4" /> },
