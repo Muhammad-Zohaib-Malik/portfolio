@@ -177,7 +177,7 @@ export default function Home() {
             applications.
           </p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-4">
             <button
               onClick={handleDownloadCV}
               disabled={isDownloading}
@@ -189,7 +189,7 @@ export default function Home() {
                 "Download My CV"
               )}
             </button>
-            <div className="flex items-center gap-4 font-mono text-sm font-bold tracking-widest uppercase">
+            <div className="flex items-center gap-4 font-mono text-sm font-bold tracking-widest uppercase pl-4 sm:pl-0">
               <a
                 href="https://github.com/Muhammad-Zohaib-Malik"
                 target="_blank"
@@ -210,7 +210,7 @@ export default function Home() {
 
         {/* Right: Avatar with Emitter */}
         <div className="flex-1 w-full flex items-center justify-center md:justify-end mt-12 md:mt-0 z-10 relative">
-          <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px]">
+          <div className="relative w-[260px] h-[260px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px]">
             <Image
               src="/backend-avatar-fixed-removebg-preview.png"
               alt="Zohaib Avatar"
@@ -229,7 +229,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-baseline gap-4 border-b border-black/10 pb-6">
             <div className="flex items-center gap-3">
               <Asterisk className="w-8 h-8 md:w-10 md:h-10 text-[#0b6e4f] animate-[spin_6s_linear_infinite]" />
-              <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tighter text-black uppercase">
+              <h2 className="font-sans text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter text-black uppercase">
                 Technology Stack
               </h2>
             </div>
@@ -247,7 +247,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-baseline gap-4 border-b border-black/10 pb-6">
             <div className="flex items-center gap-3">
               <Asterisk className="w-8 h-8 md:w-10 md:h-10 text-[#0b6e4f] animate-[spin_6s_linear_infinite]" />
-              <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tighter text-black uppercase">
+              <h2 className="font-sans text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter text-black uppercase">
                 Work Experience
               </h2>
             </div>
@@ -265,7 +265,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-baseline gap-4 border-b border-black/10 pb-6">
             <div className="flex items-center gap-3">
               <Asterisk className="w-8 h-8 md:w-10 md:h-10 text-[#0b6e4f] animate-[spin_6s_linear_infinite]" />
-              <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tighter text-black uppercase">
+              <h2 className="font-sans text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter text-black uppercase">
                 Selected Works
               </h2>
             </div>
@@ -283,7 +283,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-baseline gap-4 border-b border-black/10 pb-6">
             <div className="flex items-center gap-3">
               <Asterisk className="w-8 h-8 md:w-10 md:h-10 text-[#0b6e4f] animate-[spin_6s_linear_infinite]" />
-              <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tighter text-black uppercase">
+              <h2 className="font-sans text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter text-black uppercase">
                 Education
               </h2>
             </div>

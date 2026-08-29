@@ -98,13 +98,24 @@ const ProjectDetail = ({
       className="min-h-screen flex flex-col justify-center py-24 md:py-32 pr-4 md:pr-12"
     >
       <div className="bg-[#F2E4CA] p-8 md:p-12 rounded-3xl shadow-xl border border-black/5">
+        {/* Mobile Image */}
+        <div className="md:hidden relative w-full h-[250px] sm:h-[300px] mb-8 rounded-2xl overflow-hidden bg-transparent">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-contain drop-shadow-xl"
+            priority={index === 0}
+          />
+        </div>
+
         <div className="font-mono text-sm uppercase tracking-widest text-[#053627]/60 mb-4">
           Project {String(index + 1).padStart(2, "0")}
         </div>
-        <h3 className="font-sans text-4xl md:text-5xl font-bold tracking-tighter leading-tight text-[#053627] mb-6">
+        <h3 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter leading-tight text-[#053627] mb-6">
           {project.title}
         </h3>
-        <p className="font-sans text-lg md:text-xl text-black/80 leading-relaxed mb-8">
+        <p className="font-sans text-base sm:text-lg md:text-xl text-black/80 leading-relaxed mb-8">
           {project.description}
         </p>
 
@@ -155,7 +166,7 @@ export const ProjectsCard = () => {
   return (
     <div className="relative w-full flex flex-col md:flex-row gap-8 lg:gap-16 items-start">
       {/* Left Column - Sticky Image */}
-      <div className="w-full md:w-3/5 lg:w-[60%] h-[40vh] md:h-screen sticky top-0 md:top-0 flex items-center justify-center pt-8 md:pt-0 z-10">
+      <div className="hidden md:flex w-full md:w-3/5 lg:w-[60%] h-[40vh] md:h-screen sticky top-0 md:top-0 items-center justify-center pt-8 md:pt-0 z-10">
         <div className="relative w-full h-full max-h-[300px] md:max-h-[80vh] rounded-3xl overflow-hidden bg-transparent">
           {projects.map((project, index) => (
             <motion.div
