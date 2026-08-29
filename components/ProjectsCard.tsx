@@ -14,6 +14,7 @@ import {
   SiReact,
   SiElasticsearch,
   SiRabbitmq,
+  SiStripe,
 } from "react-icons/si";
 
 interface Project {
@@ -54,6 +55,20 @@ const projects: Project[] = [
       { name: "React", icon: <SiReact className="w-4 h-4" /> },
       { name: "Elastic", icon: <SiElasticsearch className="w-4 h-4" /> },
       { name: "RabbitMQ", icon: <SiRabbitmq className="w-4 h-4" /> },
+    ],
+  },
+  {
+    title: "GoLocal",
+    description:
+      "A comprehensive event booking and management platform to discover, book, and organize local events with secure payment processing.",
+    link: "https://github.com/Muhammad-Zohaib-Malik/GoLocal",
+    image: "/project3.png",
+    techStack: [
+      { name: "React", icon: <SiReact className="w-4 h-4" /> },
+      { name: "Node.js", icon: <SiNodedotjs className="w-4 h-4" /> },
+      { name: "Express", icon: <SiExpress className="w-4 h-4" /> },
+      { name: "MongoDB", icon: <SiMongodb className="w-4 h-4" /> },
+      { name: "Stripe", icon: <SiStripe className="w-4 h-4" /> },
     ],
   },
 ];
