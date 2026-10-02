@@ -27,7 +27,7 @@ export default function Home() {
     const link = document.createElement("a");
     link.href = "/zohaib_backend.pdf";
     link.download = "Zohaib_Malik_Backend_CV.pdf";
-    document.body.appendChild(link);
+    document.body .appendChild(link);
     link.click();
     document.body.removeChild(link);
 
