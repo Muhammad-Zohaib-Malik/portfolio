@@ -160,9 +160,6 @@ export default function Home() {
       <section className="relative w-full min-h-[85vh] flex flex-col md:flex-row items-center justify-between px-8 md:px-16 pb-12">
         {/* Left: Text */}
         <div className="flex-1 flex flex-col justify-center items-start z-20 mt-12 md:mt-0">
-          <p className="font-mono text-sm uppercase tracking-widest text-[#0b6e4f] mb-4">
-            Welcome to my portfolio
-          </p>
           <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter leading-none mb-6 text-black">
             Hi, I'm{" "}
             <span className="font-script text-[#0b6e4f] font-normal px-2">
